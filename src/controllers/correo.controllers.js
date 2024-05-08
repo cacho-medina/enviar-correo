@@ -7,7 +7,7 @@ export const enviarCorreo = async (req, res) => {
     try {
         const { data, error } = await resend.emails.send({
             from: "Cliente <boulevard-messages@resend.dev>",
-            to: ["zanlorenzocacho10@gmail.com"],
+            to: ["nachogentile64@gmail.com"],
             subject: "Consulta",
             html: `<html>
             <head>
@@ -19,7 +19,7 @@ export const enviarCorreo = async (req, res) => {
               <tr style="width:100%">
                 <td>
                   <p style="font-size:32px;line-height:1.3;margin:16px 0;font-weight:700;color:#484848;text-align:center">Boulevard Sur</p>
-                  <p style="font-size:14px;line-height:1.4;margin:16px 0;color:#484848;padding:24px;background-color:#f2f3f3;border-radius:4px">Hola, <br />${mensaje}</p>
+                  <p style="font-size:14px;line-height:1.4;margin:16px 0;color:#484848;padding:24px;background-color:#f2f3f3;border-radius:4px">${mensaje}</p>
                   <p style="font-size:14px;line-height:24px;margin:16px 0">Saludos cordiales,<br /><span style="font-weight:bold">${nombre} ${apellido}</span></p>
                   <p style="font-size:14px;line-height:24px;margin:16px 0">enviado por: ${email}</p>
                   <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />
