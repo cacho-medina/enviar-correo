@@ -2,12 +2,13 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_KEY);
 
+//CONTROLADOR PARA ENVIAR CORREOS CON RESEND
 export const enviarCorreo = async (req, res) => {
     const { nombre, apellido, mensaje, email } = req.body;
     try {
         const { data, error } = await resend.emails.send({
             from: "Cliente <boulevard-messages@resend.dev>",
-            to: ["nachogentile64@gmail.com"],
+            to: ["zanlorenzocacho10@gmail.com"],
             subject: "Consulta",
             html: `<html>
             <head>
@@ -42,5 +43,17 @@ export const enviarCorreo = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ error });
+    }
+};
+
+//CONTROLADOR PARA ENVIAR CORREOS CON NODEMAILER
+export const sendEmail = async (req, res) => {
+    try {
+    } catch (error) {
+        console.error(error);
+        res.status(404).json({
+            message: "Error al tratar de enviar el correo",
+            error,
+        });
     }
 };
